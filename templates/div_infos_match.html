@@ -1,0 +1,10 @@
+{% load static %}
+<div id="details">
+    <span>Nombre de smash: {{ smashs }}</span>
+    <span>Nombre de fautes: {{ faults }}</span>
+    <span>Points en zones dangereuses: {{ zd }} </span>
+</div>
+<div id="actions">
+    {% comment %}<img style="background-color: deepskyblue ;border: whitesmoke solid 3px; border-radius: 15px;" src="{% static 'icones/icon_visual.png' %}" alt="icon"> {% endcomment %}
+    <img onclick="deleteEleveMatch({{ id_eleve }},{{ id_match }})" style="height: 54px; width: 54px; background-color: deepskyblue ;border: whitesmoke solid 3px; border-radius: 15px;" src="{% static 'icones/icon_fulldelete.png' %}" alt="icon">
+</div>

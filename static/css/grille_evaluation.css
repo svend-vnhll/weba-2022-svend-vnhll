@@ -1,0 +1,114 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    margin: auto;
+}
+
+img {
+    height: 64px;
+    width: 64px;
+}
+
+#img_court {
+    height: 520px;
+    width: 520px;
+}
+
+#row_header {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#row_header div {
+    margin: 10px auto;
+    background-color: cadetblue;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+    text-align: center;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+#id_gri_pointSimple {
+    color: dodgerblue;
+}
+
+#id_gri_zoneDangereuse {
+    color: darksalmon;
+}
+
+#row_header #banner{
+    background-color: cadetblue;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+    text-align: center;
+    width: 85%;
+    height: 10%;
+}
+
+#main {
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+    height: 85%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#form {
+    background-color: cadetblue;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+    text-align: center;
+    width: 30%;
+    height: 80%;
+    margin: 30px 0px 10px 50px;
+    padding: 25px 25px 0px 25px;
+}
+
+
+#fld_points {
+    border: none;
+    border-radius: 25px;
+    background-color: steelblue;
+    height: 95%;
+    width: 90%;
+    margin: 30px auto 30px auto;
+}
+
+#max_points, #points, #form input{
+    font-weight: bold;
+    width: 60px;
+    height: 35px;
+    text-align: center;
+}
+
+#operateur{
+    font-weight: bold;
+    font-size: 100%;
+    width: 55px;
+    height: 35px;
+    text-align: center;
+}
+
+p {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}

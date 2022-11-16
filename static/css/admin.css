@@ -1,0 +1,202 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    margin: auto;
+    overflow: hidden;
+    font-family: Verdana sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+    align-items: flex-start;
+}
+
+img {
+    margin: 5% 2% 2% 2%;
+    height: 85%;
+    width: 50%;
+}
+
+#listeCours, #formulaire, .panel_elem{
+    background-color: cadetblue;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: darkslategray;
+    text-align: center;
+
+}
+
+.panel_elem { height: 100%; width: 10%; }
+#banner { width: 70%; }
+
+#panel {
+    width: 80%;
+    margin: 5% auto 0 auto;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+    align-items: stretch;
+}
+
+#listeCours {
+    margin-top: 2%;
+    height: 70%;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 5%;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+#formulaire {
+    margin-top: 2%;
+    height: 70%;
+    width: 40%;
+    margin-right: 10%;
+    overflow-y: scroll;
+}
+
+#content {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.cours {
+    background-color: steelblue;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+    text-align: left;
+    padding-left: 5%;
+    margin: 5% auto 5% 5%;
+    height: 120px;
+    width: 80%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.infos_cours {
+    height: 80px;
+    width: 65%;
+}
+
+.options {
+    margin: -3px -2% auto 0;
+    height: 85px;
+    text-align: right;
+    background-color: darkcyan;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+}
+
+#pop_options {
+    position: absolute;
+    height: 45%;
+    width: 8.2%;
+    visibility: hidden;
+    font-size: 120%;
+    background-color: cadetblue;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: darkslategray;
+    margin-top: -5.2%;
+    margin-left: -0.2%;
+}
+
+#pop_options img {
+    height: 64px;
+    width: 64px;
+    margin-bottom: -15%;
+}
+
+ul { margin: 15% -35% -10% 0; text-align: center;}
+li { margin: -5% auto 20% auto; font-weight: bold; }
+
+form {
+    margin: 5% 10% 10% 10%;
+    text-align: left;
+}
+
+form p {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: darkslategray dotted 2px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 130%;
+}
+
+select, input {
+    font-size: 130%;
+}
+
+input {
+    width: 65%;
+}
+
+.button {
+    background-color: darkslategray;
+    border: lightgray solid 2px;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 45%;
+}
+
+#Confirmer {
+    text-align: center;
+}
+
+.button:hover {
+    background-color: lightseagreen;
+}
+
+::-webkit-scrollbar {
+    margin-top: 50px;
+    width: 30px;
+    direction: ltr;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkslategray;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: steelblue;
+    border: darkslategray solid 3px;
+}

@@ -1,0 +1,26 @@
+<h3>Matchs de l'élève : <strong style="font-size: 110%;">{{ eleve.ele_prenom }} {{ eleve.ele_nom }} - Moyenne : {{ eleve.get_moyenne_notes }}</strong></h3>
+<div id="matchs">
+    {% for match in all_matchs %}
+        {% if id_eleve == match.mat_eleA.id or id_eleve == match.mat_eleB.id %}
+            <div class="div_match" onclick="showInfosMatch({{ id_eleve }}, {{ match.id }})">
+                <div class="scores">
+                    <div style="padding-top: 2%"><span>{{ match.mat_eleA }}</span> <span>{{ match.mat_eleB }}</span></div>
+                    <div style="padding: 0 15% 0 15%;"><h2 style="margin: 10% auto;">{{ match.get_final_echange.get_current_score }}</h2></div>
+                </div>
+                <div class="notes">
+                    {% if id_eleve == match.mat_eleA.id %}
+                        {% comment %}<span style="font-weight: bold">Points évaluation : {{ match.mat_ptsEleA }}</span><br>{% endcomment %}
+                        <span style="font-weight: bolder">Note : {{ match.mat_noteEleA }}</span>
+                    {% else %}
+                        {% comment %}<span style="font-weight: bold">Points évaluation : {{ match.mat_ptsEleB }}</span><br>{% endcomment %}
+                        <span style="font-weight: bolder">Note : {{ match.mat_noteEleB }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+<h3>Echanges</h3>
+<div id="echanges"></div>
+<div id="infos_match">
+</div>

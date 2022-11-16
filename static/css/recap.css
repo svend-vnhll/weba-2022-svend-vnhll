@@ -1,0 +1,251 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: steelblue;
+    margin: auto;
+    overflow: hidden;
+    font-family: Verdana sans-serif;
+}
+
+body {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+img {
+    height: 64px;
+    width: 64px;
+}
+
+#div_left {
+    height: 94%;
+    width: 30%;
+    margin: auto;
+    background-color: #89A1E9;
+    text-align: center;
+    border: solid whitesmoke 4px;
+    border-radius: 15px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#liste_eleves {
+    height: 100%;
+    width: 100%;
+    border-top: solid whitesmoke 4px;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+#div_right {
+    height: 95%;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#banner {
+    width: 100%;
+    height: 10%;
+    background-color: #89A1E9;
+    border: solid whitesmoke 4px;
+    border-radius: 15px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#back {
+    height: 99.5%;
+    width: 15%;
+    margin-top: -3px;
+    margin-right: -3px;
+    border: solid whitesmoke 4px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#content {
+    width: 100%;
+    height: 85%;
+    background-color: #89A1E9;
+    border: solid whitesmoke 4px;
+    border-radius: 15px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#matchs {
+    height: 30%;
+    width: 100%;
+    margin: auto;
+    border-top: solid whitesmoke 4px;
+    border-bottom: solid whitesmoke 4px;
+    overflow-y: scroll;
+}
+
+#echanges {
+    height: 45%;
+    width: 100%;
+    margin: auto;
+    border-top: solid whitesmoke 4px;
+    overflow-y: scroll;
+}
+
+.div_echange {
+    width: 90%;
+    height: 25px;
+    border: solid whitesmoke 3px;
+    border-radius: 5px;
+    margin: 2% auto 2% auto;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.div_echange .details_echange {
+    width: 60%;
+    text-align: left;
+}
+
+.div_echange .smash_echange {
+    width: 20%;
+    border-right: whitesmoke 3px solid;
+    border-left: whitesmoke 3px solid;
+    text-align: center;
+}
+
+.div_echange .score_echange {
+    width: 10%;
+    text-align: left;
+}
+
+#infos_match {
+    height: 12%;
+    width: 100%;
+    margin: auto;
+    border-top: solid whitesmoke 4px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#details{
+    padding: 1% 0 1% 0;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-weight: bold;
+    font-size: 105%;
+    margin: auto;
+}
+
+#actions{
+    padding: 5px;
+    width: 25%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_eleve, .div_match {
+    background-color: deepskyblue;
+    width: 90%;
+    height: 75px;
+    border: solid whitesmoke 3px;
+    border-radius: 15px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 2% auto 2% auto;
+}
+
+.scores, .notes{
+    width: 40%;
+}
+
+.notes {
+    margin: auto 0px auto 0px;
+    height: 50%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.scores div {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.div_eleve .actions_elv {
+    padding: 7% 0 0 0;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.div_eleve .nom {
+    height: 100%;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-left: 5%;
+}
+
+
+::-webkit-scrollbar {
+    margin-top: 50px;
+    width: 20px;
+    direction: ltr;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: deepskyblue;
+    border-radius: 8px;
+    border: lightskyblue solid 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: deepskyblue;
+    border: whitesmoke solid 3px;
+}

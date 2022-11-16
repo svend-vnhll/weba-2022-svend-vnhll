@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();}
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+    <div id="div_form">
+
+        <form id="form" action="{% url 'login' %}" method="post">
+            <h1>Connexion</h1><br>
+            {% csrf_token %}
+            {{ form_login.as_p }}
+            <br>
+            <input class="button" type="submit" value="Connexion"><br><br>
+            <a href="{% url 'signin' %}"><input class="button" type="button" value="S'inscrire"></a><br><br>
+
+            <div>
+            {% for msg in messages %}
+                <span style="color: darkred; font-weight: bold; font-size: large;">{{ msg }}</span>
+            {% endfor %}
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

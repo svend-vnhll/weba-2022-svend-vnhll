@@ -1,0 +1,75 @@
+<script>
+    document.getElementById('ech_smashGagnant').addEventListener('change', function () {
+        let ech_id = document.getElementById('ech_id')
+        $.ajax({
+            type: "POST",
+            url: "/modifier_echange/" + ech_id.value,
+            data: {
+                smash_gagnant: $('#ech_smashGagnant').val()
+            },
+            dataType: 'json'
+        });
+    })
+
+    document.getElementById('echange_supprimer').addEventListener('click', function () {
+        document.getElementById('echange_supprimer').style.visibility = 'hidden'
+        let ech_id = document.getElementById('ech_id')
+        let ech_match = document.getElementById('ech_match')
+
+        $.ajax({
+            type: "POST",
+            url: "/supprimer_echange/" + ech_match.value,
+        });
+
+        let load_echange = parseInt(ech_id.value) + 2
+        console.log(load_echange)
+
+        setTimeout(function () {
+        $("#div_echange_id").load('/load_echange_id/'+ load_echange);
+        }, 100)
+
+        setTimeout(function () {
+            $("#banner").load('/load_score/' + load_echange);
+
+        }, 1000)
+    })
+
+
+</script>
+
+<h2>Dernier échange: échange n°{{ dernier_echange.ech_sequence }}</h2>
+{% if dernier_echange.count_tir > 2 %}
+    <form id='form_echange' method="post">
+        <label style="font-size: 20px">Smash:</label>
+        <select id="ech_smashGagnant" style="font-size: 15px">
+            {% if dernier_echange.ech_smashGagnant == True %}
+                <option selected>True</option>
+                <option>False</option>
+            {% else %}
+                <option>True</option>
+                <option selected>False</option>
+            {% endif %}
+        </select>
+
+        <input id="ech_match" type="hidden" value="{{ dernier_echange.ech_match_id }}">
+        <div id="div_echange_id">
+            <input id="ech_id" type="hidden" value="{{ dernier_echange.id }}">
+        </div>
+
+
+
+        <input id="echange_supprimer" type="button" value="Supprimer">
+
+
+    </form>
+{% else %}
+    <div id="div_echange_id">
+        <input id="ech_id" type="hidden" value="{{ dernier_echange.id }}">
+    </div>
+    <input id="echange_supprimer" type="button" value="Supprimer">
+    <input id="ech_match" type="hidden" value="{{ dernier_echange.ech_match_id }}">
+    <input id="ech_smashGagnant" type="hidden">
+    <input id="echange_supprimer" type="hidden">
+{% endif %}
+
+

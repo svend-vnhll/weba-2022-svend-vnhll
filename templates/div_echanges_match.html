@@ -1,0 +1,81 @@
+<script>sc_A = 0; sc_B = 0; pos = 0;</script>
+{% for echange in all_echanges %}
+    {% if echange.type_fin == "out_A" %}
+        <div class="div_echange" style="background-color: indianred;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Hors terrain par {{ elvA }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "out_B" %}
+        <div class="div_echange" style="background-color: indianred;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Hors terrain par {{ elvB }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "faut_serv_A" %}
+        <div class="div_echange" style="background-color: indianred;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Faute service {{ elvA }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "faut_serv_B" %}
+        <div class="div_echange" style="background-color: indianred;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Faute service {{ elvB }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "filet_A" %}
+        <div class="div_echange" style="background-color: black; color: white;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Filet pour {{ elvA }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "filet_B" %}
+        <div class="div_echange" style="background-color: black; color: white;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Filet pour {{ elvB }}</div>
+            <div class="smash_echange">/</div>
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "zd_A" %}
+        <div class="div_echange" style="background-color: lightsalmon;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Point Zone Danger pour {{ elvA }}</div>
+            {% if echange.ech_smashGagnant == 1 %}
+                <div class="smash_echange">Smash</div>
+            {% else %}
+                <div class="smash_echange">/</div>
+            {% endif %}
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "zd_B" %}
+        <div class="div_echange" style="background-color: lightsalmon;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Point Zone Danger pour {{ elvB }}</div>
+            {% if echange.ech_smashGagnant == 1 %}
+                <div class="smash_echange">Smash</div>
+            {% else %}
+                <div class="smash_echange">/</div>
+            {% endif %}
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "point_A" %}
+        <div class="div_echange" style="background-color: deepskyblue;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Point pour {{ elvA }}</div>
+            {% if echange.ech_smashGagnant == 1 %}
+                <div class="smash_echange">Smash</div>
+            {% else %}
+                <div class="smash_echange">/</div>
+            {% endif %}
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% elif echange.type_fin == "point_B" %}
+        <div class="div_echange" style="background-color: deepskyblue;">
+            <div class="details_echange">[{{ echange.ech_sequence }}] Point pour {{ elvB }}</div>
+            {% if echange.ech_smashGagnant == 1 %}
+                <div class="smash_echange">Smash</div>
+            {% else %}
+                <div class="smash_echange">/</div>
+            {% endif %}
+            <div class="score_echange">{{ echange.get_current_score }}</div>
+        </div>
+    {% endif %}
+    <script> pos += 1;</script>
+{% endfor %}

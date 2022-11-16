@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Récapitulatif</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        let moyenne = parseFloat(0);
+        let moy_finale = parseFloat(0);
+        let cpt = parseFloat(0);
+    </script>
+    <link rel="stylesheet" href="{% static 'css/recap.css' %}">
+</head>
+<body>
+    <div id="div_left">
+        <h2>Liste des élèves</h2>
+        <div id="liste_eleves">
+            {% for eleve in eleves %}
+                <div class="div_eleve" id="{{ eleve.id }}">
+                    <div class="actions_elv" style="border-left: whitesmoke solid 2px; width: 80%;">
+                        <img onclick="deleteEleve({{ eleve.id }})" src="{% static 'icones/icon_fulldelete.png' %}" alt="icon" style="height: 32px; width: 32px;">
+                        {% if updating.id == eleve.id %}
+                            <img onclick="confirmUpdate({{ eleve.id }})" src="{% static 'icones/icon_save.png' %}" alt="icon" style="height: 32px; width: 32px;">
+                        {% else %}
+                            <img onclick="updateEleve({{ eleve.id }})" src="{% static 'icones/icon_config_grille.png' %}" alt="icon" style="height: 32px; width: 32px;">
+                        {% endif %}
+                    </div>
+                    {% if updating.id == eleve.id %}
+                        <div class="nom">
+                            <input style="width: 75%; direction: ltr;" id="input" type="text" value="{{ eleve.nom }}">{{ eleve.nom }}
+                        </div>
+                    {% else %}
+                        <div onclick="showMatchs({{ eleve.id }})" class="nom">
+                            <span>Nom : {{ eleve.ele_nom }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="div_right">
+        <div id="banner">
+            <div style="padding-left: 5%;"><h1>Récapitulatifs des élèves</h1></div>
+            <div id="back"><a href="{% url 'login' %}"><img src="{% static '/icones/icon_quit.png' %}" alt="icon"></a></div>
+        </div>
+        <div id="content">
+            <h3>Matchs de l'élève : {{ sel_ele_nom }} {{ sel_ele_nom }}</h3>
+            <div id="matchs"></div>
+            <div id="echanges"></div>
+            <div id="infos_match"></div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'javascript/recap_fill_data.js' %}"></script>
+</html>

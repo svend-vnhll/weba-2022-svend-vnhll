@@ -1,0 +1,237 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+	flex-direction: column;
+	/*  column = Mise en colonne
+	    column-reverse = Mise en colonne inversée
+	    row = Mise en ligne
+	    row-reverse = Mise en ligne inversée    */
+	flex-wrap: nowrap;
+	/*  nowrap = pas de retour à la ligne
+	    wrap = Vont à la ligne quand il n'y a plus de place
+	    wrap-reverse = comme wrap, mais en sens inverse     */
+	justify-content: flex-start; /*Fonctionne pour des éléments verticaux et horizontaux !*/
+	/*  flex-start = alignés au début (par défaut)
+	    flex-end = alignés à la fin
+	    center = alignés au centre
+	    space-between = les éléments sont étirés sur tout l'axe (espace entre eux)
+	    space-around = idem, étirés sur tout l'axe, mais espace sur les extrémités. */
+    align-items: flex-start;
+	/*  stretch : les éléments sont étirés sur tout l'axe (valeur par défaut)
+	    flex-start : alignés au début
+	    flex-end : alignés à la fin
+	    center : alignés au centre
+	    baseline : alignés sur la ligne de base (semblable à flex-start).   */
+}
+
+div {
+    width: 100%;
+    margin: 0.1% 0.5% 0.1% 0.5%;
+    text-align: center;
+}
+
+img {
+    margin: 10px 10px 10px 10px;
+    height: 48px;
+    width: 48px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+#pop_options {
+    padding-top: 10px;
+    position: absolute;
+    height: 35%;
+    width: 8%;
+    visibility: hidden;
+    font-size: 75%;
+}
+
+#pop_options img {
+    height: 48px;
+    width: 48px;
+    margin: 0px 10px -10px 10px;
+}
+
+#row_header, #row_court, #row_eleves, #row_actions {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#row_header { height: 10.5%;}
+#row_header div, #row_actions div, #row_eleves .border, .eleve {
+    background-color: cadetblue;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkslategray;
+}
+
+.eleve {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#row_court { height: 75%; width: 100%; }
+#row_header .border { width: 10%;}
+#row_eleves .border { width: 32.5%; }
+
+#cell_visual, #cell_next {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 50%;
+}
+
+#eleA { height: 100%; width: 100%; margin: -2px 0px -2px 0px;}
+#eleB { height: 100%; width: 100%; margin: -2px 0px -2px 0px;}
+#court_table { height: 100%;}
+.court_filet { width:8%; border: none; background-color: #626262; margin: 0px -2.5px 0px -2.5px;}
+.court_ext { height: 12%;  }
+.court_out { width: 10%; }
+.zd_back { width: 10%; }
+.zd_front { width: 20%; }
+.zd_back, .zd_front { background-color: #FBC2AB; border-color: white; border-style: solid;}
+td, td :not(.court_out) { background-color: #89A1E9; border-color: white; border-style: solid;}
+.court_ext .court_back, .court_ext .court_center, .court_ext .court_front, .court_out { background-color: #DD9999; border-color: white;}
+#court {
+    display: flex;
+    padding: -2px -2px -2px -2px;
+    pointer-events: none;
+}
+
+
+#popup_form {
+    height: 200px;
+    position: fixed;
+    width: 300px;
+    visibility: hidden;
+    display: none; /*!*/
+    margin-top: -130px;
+    margin-left: -5px;
+    background-color: cadetblue;
+    border-radius: 25px;
+    border: solid darkslategray;
+}
+
+#popup_form form {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+
+}
+
+#liste_eleve1, #liste_eleve2, #liste_eleve3 {
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+#start {
+    position: absolute;
+    width: 13%;
+    height: 13%;
+    border: 1px solid black;
+    margin-left: 43%;
+    margin-top: 15%;
+    background-color: forestgreen;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+#id_ele_nom {margin-left: 26.5px;}
+
+#pop_input_tir {
+    position: absolute;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    height: 120px;
+    width: 40px;
+    visibility: hidden;
+}
+
+.interact {
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+    height: 42px;
+    width: 42px;
+    background-color: whitesmoke;
+    border-radius: 50px;
+}
+#pop_input_tir img{
+    margin: auto auto -2px;
+    height: 32px;
+    width: 32px;
+}
+
+.alert_ajout_eleve {
+    position: absolute;
+    width: 15%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+    margin-top: -1%;
+}
+select{
+    width: 100%;
+    text-align: center;
+}
+
+#check_admin {
+    position: absolute;
+    width: 35%;
+    height: 22%;
+    margin: 5% auto auto 33%;
+    background-color: indianred;
+    border-radius: 25px;
+    border: whitesmoke solid 3px;
+    visibility: hidden;
+}
+
+#input_password, select {
+    font-size: 120%;
+}
+
+.button {
+    margin-left: 5px;
+    background-color: indianred;
+    border: lightgray solid 2px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 25%;
+}
+
+.button:hover {
+    background-color: darkred;
+}
