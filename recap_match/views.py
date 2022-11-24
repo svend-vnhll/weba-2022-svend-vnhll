@@ -11,6 +11,7 @@ from templates.forms import *
 
 DAYS = {'LUNDI': 1, 'MARDI': 2, 'MERCREDI': 3, 'JEUDI': 4, 'VENDREDI': 5}
 
+
 def login(request):
     try:
         del request.session['id_admin']
@@ -86,7 +87,7 @@ def recap(request):
         'ele_nom').exclude(ele_nom="Elève")
     context = {'eleves': all_eleves_cours,
                'matchs': matchs_cours}
-    return render(request, 'recap.html', context)
+    return render(request, 'recap_eleves.html', context)
 
 
 def recap_updating(request, id_eleve):
@@ -97,7 +98,7 @@ def recap_updating(request, id_eleve):
     context = {'eleves': all_eleves_cours,
                'matchs': matchs_cours,
                'updating': Eleve.objects.get(id=id_eleve)}
-    return render(request, 'recap.html', context)
+    return render(request, 'recap_eleves.html', context)
 
 
 def delete_eleve(request, id_eleve):
